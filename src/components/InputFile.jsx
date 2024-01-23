@@ -23,7 +23,7 @@ const InputFile = () => {
       />
       {previewUrl && (
         <div className='text-center mt-3'>
-          <img src={previewUrl} alt="Preview" style={{ width: "100%", height: "100%" }} />
+          <img src={previewUrl} alt="Preview" style={{ width: "600px", height: "350px" }} />
         </div>
       )}
     </div>
