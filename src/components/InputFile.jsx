@@ -13,7 +13,7 @@ const InputFile = () => {
   };
 
   return (
-    <div className='container text-center'>
+    <div className='container text-center pt-2'>
       <label htmlFor="photo">Choose file....</label>
       <input
         type="file"
