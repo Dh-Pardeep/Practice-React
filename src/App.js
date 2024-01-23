@@ -1,6 +1,6 @@
 import './App.css';
-import InputFile from './components/InputFile';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import InputFile from './components/InputFile';
 function App() {
   return (
     <>

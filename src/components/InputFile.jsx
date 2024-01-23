@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 
 const InputFile = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [previewUrl, setPreviewUrl] = useState(null);
+  const [fileData, setFileData] = useState({
+    selectedFile: null,
+    previewUrl: null,
+  });
 
   const handleFileChange = (file) => {
     const blobUrl = URL.createObjectURL(file);
 
-    setSelectedFile(file);
-    setPreviewUrl(blobUrl);
+    setFileData({
+      selectedFile: file,
+      previewUrl: blobUrl,
+    });
     console.log('Selected File:', file);
   };
 
@@ -21,9 +25,9 @@ const InputFile = () => {
         hidden
         onChange={(e) => handleFileChange(e.target.files[0])}
       />
-      {previewUrl && (
+      {fileData.previewUrl && (
         <div className='text-center mt-3'>
-          <img src={previewUrl} alt="Preview" style={{ width: "600px", height: "350px" }} />
+          <img src={fileData.previewUrl} alt="Preview" style={{ width: "600px", height: "350px" }} />
         </div>
       )}
     </div>
