@@ -25,6 +25,8 @@ const InputFile = () => {
         hidden
         onChange={(e) => handleFileChange(e.target.files[0])}
       />
+
+
       {fileData.previewUrl && (
         <div className='text-center mt-3'>
           <img src={fileData.previewUrl} alt="Preview" style={{ width: "600px", height: "350px" }} />
