@@ -1,7 +1,8 @@
 
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
-
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth'
 const firebaseConfig = {
     apiKey: "AIzaSyDgcUo67Qog5EUP5Igf9V0PJENb8SE7I9Q",
     authDomain: "practice-react-340.firebaseapp.com",
@@ -13,6 +14,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-export { db };
+const dbrt = getDatabase(app);
+const dbfs = getFirestore(app);
+const auth = getAuth(app);
+export { dbrt, dbfs, auth };  

@@ -1,12 +1,16 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyForm from './components/MyForm';
-// import InputFile from './components/InputFile';
+import InputFile from './components/InputFile';
+import RealtimeData from './components/RealtimeData';
+import FireStoreData from './components/FirestoreData';
+import AuthenticationData from './components/AuthenticationData';
 function App() {
   return (
     <>
-      {/* <InputFile /> */}
-      <MyForm/>
+      <InputFile />
+      <FireStoreData />
+      <RealtimeData />
+      <AuthenticationData/>
     </>
   );
 }

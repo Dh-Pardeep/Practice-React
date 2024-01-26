@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { db } from '../Firebase';
+import { dbrt } from '../Firebase';
 import { ref, set } from 'firebase/database';
 
-const MyForm = () => {
+const RealtimeData = () => {
     const defaultData = {
         gmail: "",
         password: "",
@@ -13,7 +13,7 @@ const MyForm = () => {
         e.preventDefault();
         if (logindata.gmail !== "" && logindata.password !== "") {
             console.log(logindata, "login")
-            set(ref(db, 'users/'), {
+            set(ref(dbrt, 'users/'), {
                 useremail: logindata.gmail,
                 userpassword: logindata.password,
             });
@@ -23,7 +23,7 @@ const MyForm = () => {
 
     return (
         <>
-            <form action="" onSubmit={(e) => onSubmitHandler(e)} >
+            <form action="" onSubmit={(e) => onSubmitHandler(e)} className='mt-5'>
                 <input required type="email" placeholder='Email' value={logindata.gmail} onChange={(e) => setLogindata({ ...logindata, gmail: e.target.value })} />
                 <input required type='password' placeholder='Password' value={logindata.password} onChange={(e) => setLogindata({ ...logindata, password: e.target.value })} />
                 <button type="submit">Log In</button>
@@ -32,4 +32,4 @@ const MyForm = () => {
     )
 }
 
-export default MyForm
+export default RealtimeData
